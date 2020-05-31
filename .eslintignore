@@ -1,0 +1,12 @@
+src/registerServiceWorker.js
+node_modules/*
+public/*
+build/*
+config/*
+.prettierrc
+.metro.config.js
+e2e/init.js
+app/modules/themes/Images.js
+react-native.config.js
+__mocks__/@react-native-community/async-storage/index.js
+zfiles/*

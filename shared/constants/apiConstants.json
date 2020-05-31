@@ -1,0 +1,9 @@
+ {
+  "LOGIN_ENDPOINT": "/login",
+  "LOGOUT_ENDPOINT": "/logout",
+  "REFRESH_TOKEN_ENDPOINT": "/jwt-api/token/refresh",
+  "GET_PRIVACY_POLICY": "/static-page/privacy-policy",
+  "GET_TERMS_AND_CONDITIONS": "/static-page/terms-and-conditions",
+  "FORGOT_PASSWORD_API": "/users/request-password-reset",
+  "CHANGE_PASSWORD_API": "/users/password-reset"
+}
