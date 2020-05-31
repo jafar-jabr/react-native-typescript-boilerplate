@@ -1,6 +1,7 @@
 # react-native-typescript-boilerplate
 
 Maintained, updated, well-structured
+
 include
 - navigation
 - redux saga
