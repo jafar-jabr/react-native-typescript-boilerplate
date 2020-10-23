@@ -1,5 +1,5 @@
 import I18n from 'i18n-js';
-import React, { MutableRefObject, useEffect } from 'react';
+import { MutableRefObject, useEffect } from 'react';
 import { AppState, StatusBar, View } from 'react-native';
 import { useSelector } from 'react-redux';
 import { NavigationContainer } from '@react-navigation/native';

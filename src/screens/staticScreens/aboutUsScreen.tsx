@@ -1,4 +1,3 @@
-import React from 'react';
 import { SafeAreaView, ScrollView, Text, Image } from 'react-native';
 import I18n from '../../../shared/I18n/I18n';
 import HomePageLtrStyle from '../../../shared/styles/homePage.ltr.style';

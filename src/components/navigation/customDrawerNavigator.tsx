@@ -1,4 +1,3 @@
-import React from 'react';
 import { Text, Platform, ScrollView, TouchableOpacity, View } from 'react-native';
 import { Divider, Icon } from 'react-native-elements';
 import { useDispatch } from 'react-redux';

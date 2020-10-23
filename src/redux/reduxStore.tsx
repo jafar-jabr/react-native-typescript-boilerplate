@@ -1,4 +1,3 @@
-import React from 'react';
 import { Provider as ReduxProvider } from 'react-redux';
 import { AnyAction, applyMiddleware, combineReducers, compose, createStore } from 'redux';
 import createSagaMiddleware from 'redux-saga';

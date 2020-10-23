@@ -1,4 +1,3 @@
-import React from 'react';
 import { SafeAreaView, ScrollView, Text, Image } from 'react-native';
 import { debounce } from 'lodash';
 import Config from 'react-native-config';

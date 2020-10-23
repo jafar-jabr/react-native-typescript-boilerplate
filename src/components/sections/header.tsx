@@ -1,4 +1,3 @@
-import React from 'react';
 import { Platform } from 'react-native';
 import { Header as ElementHeader } from 'react-native-elements';
 import { Colors } from '../../../shared/themes';

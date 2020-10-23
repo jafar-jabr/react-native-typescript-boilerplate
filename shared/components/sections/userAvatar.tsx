@@ -1,5 +1,4 @@
 import * as PropTypes from 'prop-types';
-import React from 'react';
 import { Text, View, Image } from 'react-native';
 import UserAvatarStyle from '../../styles/userAvatar.ltr.styles';
 

@@ -34,9 +34,10 @@
   ],
   "rules": {
     "react/jsx-props-no-spreading": "off",
-    "react/jsx-uses-react": "warn",
     "react/jsx-uses-vars": "warn",
     "react-hooks/rules-of-hooks": "warn",
+    "react/jsx-uses-react": "off",
+    "react/react-in-jsx-scope": "off",
     "react-hooks/exhaustive-deps": "warn",
     "react/prop-types": ["warn", { "ignore": ["navigation"] }], // skip over component linting
     "react/jsx-indent-props": "off",
