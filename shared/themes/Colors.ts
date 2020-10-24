@@ -11,7 +11,7 @@ const Colors = {
   lightText: '#ffffff',
   greyText: '#4a6572',
   darkText: '#253840',
-  greyBackground: '#90A4AE'
+  greyBackground: '#90A4AE',
 };
 
 export default Colors;

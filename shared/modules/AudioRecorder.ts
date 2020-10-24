@@ -26,11 +26,12 @@ function useRecorder(): [boolean, Function, Function] {
     Utils.audioPermission().then((result) => {
       if (result) {
         recorder.current = new Recorder(audioTempFile, {
-          encoder: "", format: "",
+          encoder: '',
+          format: '',
           bitrate: 256000,
           channels: 2,
           sampleRate: 44100,
-          quality: 'max'
+          quality: 'max',
         });
       }
     });

@@ -1,6 +1,6 @@
 function AuthReducer(
   state = {
-    isLoggedIn: true, //in real life should be undefined
+    isLoggedIn: true, // in real life should be undefined
     changePasswordError: undefined,
   },
   action: any,

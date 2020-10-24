@@ -1,7 +1,7 @@
 import I18n from 'i18n-js';
 import { MutableRefObject, useEffect } from 'react';
 import { AppState, StatusBar, View } from 'react-native';
-import { useSelector } from 'react-redux';
+import { useSelector, shallowEqual } from 'react-redux';
 import { NavigationContainer } from '@react-navigation/native';
 import MainAppNavigation from '../components/navigation/appNavigation';
 import { Colors } from '../../shared/themes';
@@ -13,13 +13,14 @@ import { requestLoginError, requestLoginSuccess } from './actions/loginActions';
 import * as StringConstants from '../../shared/constants/stringConstants.json';
 import GlobalLtrStyle from '../../shared/styles/global.ltr.style';
 import LoadingSpinner from '../../shared/views/LoadingSpinner';
+import { getAuthState } from './statesGetter';
 
 const ReduxAppWrapper = (): JSX.Element => {
   const loadingSelector = createLoadingSelector([]);
   const errorSelector = createErrorMessageSelector([]);
-  const { isLoggedIn } = useSelector((state) => state.authState);
-  const isLoading = useSelector((state) => loadingSelector(state));
-  const error = useSelector((state) => errorSelector(state));
+  const { isLoggedIn } = useSelector(getAuthState, shallowEqual);
+  const isLoading = useSelector(loadingSelector);
+  const error = useSelector(errorSelector);
   useEffect(() => {
     (async () => {
       I18n.locale = await StorageService.getData(StringConstants.APP_LANGUAGE, 'en');

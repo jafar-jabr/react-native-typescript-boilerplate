@@ -23,7 +23,7 @@ const averageOfReviews = (reviewsSummary: { [x: string]: string }) => {
   return reviewsCount ? parseFloat(parseFloat(String(starsCount / reviewsCount)).toFixed(2)) : 0;
 };
 
-const countReviews = (reviewsSummary: { [x: string]: string; }) => {
+const countReviews = (reviewsSummary: { [x: string]: string }) => {
   let count = 0;
   Object.keys(reviewsSummary).map((stars) => {
     count += parseFloat(reviewsSummary[stars]);
@@ -44,7 +44,7 @@ const responsiveFont = (size: number) => {
   return Math.round(PixelRatio.roundToNearestPixel(newSize)) - 2;
 };
 
-const postableImage = (image: { uri: any; path: any; }) => {
+const postableImage = (image: { uri: any; path: any }) => {
   try {
     const path = Platform.OS === 'ios' ? image.uri : image.path;
     const fileName = path.split('/').pop();
@@ -60,7 +60,11 @@ const postableImage = (image: { uri: any; path: any; }) => {
   }
 };
 
-const checkObjectsDuplication = (oldData: string | any[], newData: string | any[], uniqueKey: string | number) => {
+const checkObjectsDuplication = (
+  oldData: string | any[],
+  newData: string | any[],
+  uniqueKey: string | number,
+) => {
   const uniqueKeyArray = [];
   const doesntExist = [];
   for (let i = 0; i < oldData.length; i += 1) {
@@ -112,7 +116,13 @@ const makeSectionListFormat = (dataArrayOfObjects: any[], labelKey: string | num
   });
 };
 
-const geographicalDistance = (lat1: number, lon1: number, lat2: number, lon2: number, unit = 'K') => {
+const geographicalDistance = (
+  lat1: number,
+  lon1: number,
+  lat2: number,
+  lon2: number,
+  unit = 'K',
+) => {
   if (lat1 === lat2 && lon1 === lon2) {
     return 0;
   }

@@ -28,4 +28,4 @@ const Provider = ({ children }) => <ReduxProvider store={store}>{children}</Redu
 Provider.propTypes = {
   children: PropTypes.shape({}).isRequired,
 };
-export { Provider, createPreloadedStore, store };
+export { Provider, store };

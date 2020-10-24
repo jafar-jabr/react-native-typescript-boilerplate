@@ -5,7 +5,7 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git@github.com:jafaronly/react-native-typescript-boilerplate.git"
+    "url": "git@github.com:jafar-jabr/react-native-typescript-boilerplate.git"
   },
   "keywords": [
     "react-native-typescript-boilerplate",
@@ -20,14 +20,14 @@
   "author": {
     "name": "Jafar Jabr",
     "email": "jafar.jabr.dev@gmail.com",
-    "url": "https://github.com/jafaronly"
+    "url": "https://github.com/jafar-jabr"
   },
   "scripts": {
     "android": "react-native run-android",
     "ios": "react-native run-ios",
     "start": "react-native start  --reset-cache",
     "test": "jest",
-    "lint": "eslint '*/**/*.{js,ts,tsx}' --quiet --fix"
+    "lint": "eslint . -c .eslintrc.json --ext js,jsx,ts,tsx"
   },
   "dependencies": {
     "@react-native-community/async-storage": "1.12.1",
