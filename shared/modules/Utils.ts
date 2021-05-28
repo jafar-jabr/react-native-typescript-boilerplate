@@ -44,14 +44,13 @@ const responsiveFont = (size: number) => {
   return Math.round(PixelRatio.roundToNearestPixel(newSize)) - 2;
 };
 
-const postableImage = (image: { uri: any; path: any }) => {
+const postableImage = (image: { uri: any; }) => {
   try {
-    const path = Platform.OS === 'ios' ? image.uri : image.path;
+    const path = image.uri;
     const fileName = path.split('/').pop();
     const fileType = fileName.split('.').pop();
-    const filePath = Platform.OS === 'ios' ? path : `file://${path}`;
     return {
-      uri: filePath,
+      uri: path,
       name: fileName,
       type: `image/${fileType}`,
     };
@@ -60,23 +59,6 @@ const postableImage = (image: { uri: any; path: any }) => {
   }
 };
 
-const checkObjectsDuplication = (
-  oldData: string | any[],
-  newData: string | any[],
-  uniqueKey: string | number,
-) => {
-  const uniqueKeyArray = [];
-  const doesntExist = [];
-  for (let i = 0; i < oldData.length; i += 1) {
-    uniqueKeyArray.push(oldData[i][uniqueKey]);
-  }
-  for (let j = 0; j < newData.length; j += 1) {
-    if (!uniqueKeyArray.includes(newData[j][uniqueKey])) {
-      doesntExist.push(newData[j]);
-    }
-  }
-  return doesntExist;
-};
 
 const antiDuplication = (items: any[], uniqueKey: string | number) => {
   const uniq = {};
@@ -90,7 +72,7 @@ const parseToInt = (param: any) => {
   if (!param) {
     return 0;
   }
-  if (param.constructor === String) {
+  if (typeof param === 'string') {
     return parseInt(param, 10);
   }
   return param;
@@ -150,7 +132,7 @@ const geographicalDistance = (
 };
 
 const makeRandomIdentifier = (length: number) => {
-  const result = [];
+  const result: string[] = [];
   const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
   const charactersLength = characters.length;
   for (let i = 0; i < length; i += 1) {
@@ -172,81 +154,6 @@ const audioPermission = async () => {
   return result === PermissionsAndroid.RESULTS.GRANTED;
 };
 
-const cameraPermission = () => {
-  return new Promise((resolve) => {
-    if (Platform.OS === 'android') {
-      PermissionsAndroid.request(PermissionsAndroid.PERMISSIONS.CAMERA)
-        .then((permission) => {
-          resolve(permission);
-        })
-        .catch(() => {
-          resolve(null);
-        });
-    } /** IOS platform* */ else {
-      request(PERMISSIONS.IOS.CAMERA)
-        .then((iosPermission) => {
-          switch (iosPermission) {
-            case RESULTS.UNAVAILABLE:
-              resolve(null);
-              break;
-            case RESULTS.DENIED:
-              resolve(null);
-              break;
-            case RESULTS.GRANTED:
-              resolve(true);
-              break;
-            default:
-              resolve(null);
-              break;
-          }
-        })
-        .catch(() => {
-          resolve(null);
-        });
-    }
-    return true;
-  });
-};
-
-const cameraExtendedPermission = () => {
-  return new Promise((resolve) => {
-    if (Platform.OS === 'android') {
-      PermissionsAndroid.requestMultiple([
-        PermissionsAndroid.PERMISSIONS.CAMERA,
-        PermissionsAndroid.PERMISSIONS.READ_EXTERNAL_STORAGE,
-        PermissionsAndroid.PERMISSIONS.WRITE_EXTERNAL_STORAGE,
-      ])
-        .then((permission) => {
-          resolve(permission);
-        })
-        .catch(() => {
-          resolve(null);
-        });
-    } /** IOS platform* */ else {
-      request(PERMISSIONS.IOS.CAMERA)
-        .then((iosPermission) => {
-          switch (iosPermission) {
-            case RESULTS.UNAVAILABLE:
-              resolve(null);
-              break;
-            case RESULTS.DENIED:
-              resolve(null);
-              break;
-            case RESULTS.GRANTED:
-              resolve(true);
-              break;
-            default:
-              resolve(null);
-              break;
-          }
-        })
-        .catch(() => {
-          resolve(null);
-        });
-    }
-    return true;
-  });
-};
 const fileToBuffer = (inputFile: string, type = 'base64') => {
   return new Promise((resolve, reject) => {
     readFile(inputFile, { encoding: type })
@@ -262,29 +169,6 @@ const fileToBuffer = (inputFile: string, type = 'base64') => {
 const getBasePath = () => {
   const basePath = DocumentDirectoryPath;
   return Platform.OS === 'android' ? `file://${basePath}` : basePath;
-};
-
-const orderTimeCounter = (startTime: any, numberOfMinutes: any, endTime = null) => {
-  const rightNow = endTime ?? atThisMoment('yyyy-mm-dd HH:MM:ss', Config.TIMEZONE);
-  const createdAtDate = doFormat(startTime, 'yyyy-m-d', Config.TIMEZONE);
-  const createdAtHour = doFormat(startTime, 'HH:MM', Config.TIMEZONE);
-  const dueTime = addMinutes(createdAtHour, numberOfMinutes);
-  const dueTimeObject = dateOf(`${createdAtDate} ${dueTime}`);
-  const from = timeStampOf(rightNow);
-  const to = timeStampOf(dueTimeObject);
-  const minutes = Math.round((to - from) / 60).toString();
-  let label = '';
-  if (to > from) {
-    // label = `${minutes} of ${from} ${to}`;
-    label = minutes;
-    return { label, status: 'before' };
-  }
-  if (to < from) {
-    label = minutes;
-    return { label, status: 'after' };
-  }
-  label = `0`;
-  return { label, status: 'exact' };
 };
 
 const stringFormat = (phrase: string, ...args: any[]) => {
@@ -322,7 +206,7 @@ const sortObjectByKey = (param: any[], key: string | number) => {
 const randomColor = () => {
   return `#${Math.floor(Math.random() * 16777215)
     .toString(16)
-    .padStart(6, 0)}`;
+    .padStart(6, '0')}`;
 };
 const roundToTwo = (num: any) => {
   return +`${Math.round(Number(`${num}e+2`))}e-2`;
@@ -354,7 +238,6 @@ export default {
   countReviews,
   responsiveFont,
   postableImage,
-  checkObjectsDuplication,
   groupObjectByKey,
   geographicalDistance,
   makeRandomIdentifier,
@@ -362,9 +245,6 @@ export default {
   fileToBuffer,
   getBasePath,
   parseToInt,
-  orderTimeCounter,
-  cameraPermission,
-  cameraExtendedPermission,
   antiDuplication,
   stringFormat,
   makeSectionListFormat,

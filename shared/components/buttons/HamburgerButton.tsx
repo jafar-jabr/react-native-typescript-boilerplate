@@ -1,6 +1,6 @@
 import { Icon } from 'react-native-elements';
 import GlobalLtrStyle from '../../styles/global.ltr.style';
-import * as NavigationService from '../../services/navigationService';
+import * as NavigationService from '../../services/NavigationService';
 
 const HamburgerButton = (): JSX.Element => (
   <Icon

@@ -9,7 +9,7 @@ import {
 import { Button } from 'react-native-elements';
 import Config from 'react-native-config';
 import loginPageStyle from '../../../shared/styles/auth.ltr.style';
-import HamburgerButton from '../../../shared/components/buttons/hamburgerButton';
+import HamburgerButton from '../../../shared/components/buttons/HamburgerButton';
 import Header from '../../components/sections/header';
 
 const LoginScreen = (): JSX.Element => {

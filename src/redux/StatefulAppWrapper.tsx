@@ -1,26 +1,26 @@
 import I18n from 'i18n-js';
 import { MutableRefObject, useEffect } from 'react';
 import { AppState, StatusBar, View } from 'react-native';
-import { useSelector, shallowEqual } from 'react-redux';
+import { useSelector, shallowEqual, useDispatch } from 'react-redux';
 import { NavigationContainer } from '@react-navigation/native';
-import MainAppNavigation from '../components/navigation/appNavigation';
+import MainAppNavigation from '../components/navigation/AppNavigation';
 import { Colors } from '../../shared/themes';
-import { createErrorMessageSelector, createLoadingSelector } from './api/apiWatchMan';
-import StorageService from '../../shared/services/storageService';
-import { navigationRef, isMountedRef } from '../../shared/services/navigationService';
-import { store } from './reduxStore';
-import { requestLoginError, requestLoginSuccess } from './actions/loginActions';
+import { createErrorMessageSelector, createLoadingSelector } from './api/ApiWatchMan';
+import StorageService from '../../shared/services/StorageService';
+import { navigationRef, isMountedRef } from '../../shared/services/NavigationService';
+import { requestLoginError, requestLoginSuccess } from './actions/LoginActions';
 import * as StringConstants from '../../shared/constants/stringConstants.json';
 import GlobalLtrStyle from '../../shared/styles/global.ltr.style';
 import LoadingSpinner from '../../shared/views/LoadingSpinner';
-import { getAuthState } from './statesGetter';
+import { getAuthState } from './StatesGetter';
 
-const ReduxAppWrapper = (): JSX.Element => {
+const StatefulAppWrapper = (): JSX.Element => {
   const loadingSelector = createLoadingSelector([]);
   const errorSelector = createErrorMessageSelector([]);
   const { isLoggedIn } = useSelector(getAuthState, shallowEqual);
   const isLoading = useSelector(loadingSelector);
   const error = useSelector(errorSelector);
+  const dispatch = useDispatch();
   useEffect(() => {
     (async () => {
       I18n.locale = await StorageService.getData(StringConstants.APP_LANGUAGE, 'en');
@@ -42,17 +42,12 @@ const ReduxAppWrapper = (): JSX.Element => {
         try {
           const userToken = await StorageService.getData(StringConstants.USER_TOKEN, null);
           if (userToken) {
-            store.dispatch(requestLoginSuccess({}));
-            // store.dispatch(
-            //   patchUserProfileRequest({
-            //     newUserInfo: {deviceRegistrationId: deviceRegId},
-            //   }),
-            // );
+            dispatch(requestLoginSuccess({}));
           } else {
-            store.dispatch(requestLoginError({}));
+            dispatch(requestLoginError({}));
           }
         } catch (e) {
-          store.dispatch(requestLoginError({}));
+          dispatch(requestLoginError({}));
         }
       })();
     }
@@ -74,4 +69,4 @@ const ReduxAppWrapper = (): JSX.Element => {
   );
 };
 
-export default ReduxAppWrapper;
+export default StatefulAppWrapper;

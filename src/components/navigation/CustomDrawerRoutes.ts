@@ -1,5 +1,5 @@
 import I18n from '../../../shared/I18n/I18n';
-import * as NavigationService from '../../../shared/services/navigationService';
+import * as NavigationService from '../../../shared/services/NavigationService';
 
 const customDrawerRoutes = () => {
   const defaultAction = (path) => {
@@ -9,13 +9,13 @@ const customDrawerRoutes = () => {
     NavigationService.closeDrawer();
   };
   const homeRoute = {
-    title: I18n.t('main_screen'),
+    title: I18n.t('mainScreen'),
     path: 'MainScreen',
     icon: 'home',
     onclick: () => defaultAction('MainScreen'),
   };
   const aboutUsRoute = {
-    title: I18n.t('about_us'),
+    title: I18n.t('aboutUs'),
     path: 'AboutUs',
     icon: 'info',
     onclick: () => defaultAction('AboutUs'),

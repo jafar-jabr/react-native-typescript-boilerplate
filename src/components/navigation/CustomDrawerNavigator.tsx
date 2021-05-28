@@ -4,11 +4,11 @@ import { useDispatch } from 'react-redux';
 import SafeAreaView from 'react-native-safe-area-view';
 import { version } from '../../../package.json';
 import I18n from '../../../shared/I18n/I18n';
-import { requestLogout } from '../../redux/actions/loginActions';
+import { requestLogout } from '../../redux/actions/LoginActions';
 
 import NavigationLtrStyle from '../../../shared/styles/navigation.ltr.style';
-import UserAvatar from '../../../shared/components/sections/userAvatar';
-import customDrawerRoutes from './customDrawerRoutes';
+import UserAvatar from '../../../shared/components/sections/UserAvatar';
+import customDrawerRoutes from './CustomDrawerRoutes';
 
 const CustomDrawerNavigator = () => {
   const dispatch = useDispatch();

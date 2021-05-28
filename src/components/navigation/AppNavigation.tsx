@@ -2,11 +2,11 @@ import { createDrawerNavigator } from '@react-navigation/drawer';
 import { createStackNavigator } from '@react-navigation/stack';
 import { Dimensions } from 'react-native';
 import * as PropTypes from 'prop-types';
-import AboutUsScreen from '../../screens/staticScreens/aboutUsScreen';
-import SplashScreen from '../../screens/staticScreens/splashScreen';
-import MainScreen from '../../screens/mainScreen';
-import CustomDrawerNavigator from './customDrawerNavigator';
-import LoginScreen from '../../screens/auth/loginScreen';
+import AboutUsScreen from '../../screens/staticScreens/AboutUsScreen';
+import SplashScreen from '../../screens/staticScreens/SplashScreen';
+import MainScreen from '../../screens/MainScreen';
+import CustomDrawerNavigator from './CustomDrawerNavigator';
+import LoginScreen from '../../screens/auth/LoginScreen';
 
 const { width, height } = Dimensions.get('screen');
 
