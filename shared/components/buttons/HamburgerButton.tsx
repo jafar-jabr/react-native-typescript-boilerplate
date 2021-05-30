@@ -1,14 +1,8 @@
-import { Icon } from 'react-native-elements';
-import GlobalLtrStyle from '../../styles/global.ltr.style';
 import * as NavigationService from '../../services/NavigationService';
+import { HamburgerMenu } from '../../styled/global.ltr.styles';
 
 const HamburgerButton = (): JSX.Element => (
-  <Icon
-    name="menu"
-    size={30}
-    style={GlobalLtrStyle.HamburgerIcon}
-    onPress={() => NavigationService.openDrawer()}
-  />
+  <HamburgerMenu name="menu" size={30} onPress={() => NavigationService.openDrawer()} />
 );
 
 export default HamburgerButton;

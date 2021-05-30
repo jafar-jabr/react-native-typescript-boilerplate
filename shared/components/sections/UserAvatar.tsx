@@ -1,18 +1,15 @@
 import * as PropTypes from 'prop-types';
-import { Text, View, Image } from 'react-native';
-import UserAvatarStyle from '../../styles/userAvatar.ltr.styles';
+import { AvatarText, AvatarWrapper, AvatarImage } from '../../styled/avatar.ltr.styles';
 
-const UserAvatar = ({ imageURL, firstName, lastName, theme, size }) => {
+const UserAvatar = ({ imageURL, firstName, lastName, size }) => {
   if (!imageURL) {
     return (
-      <View style={UserAvatarStyle.UserImageWrapper}>
-        <Text style={UserAvatarStyle.UserAvatarImage}>
-          {`${firstName.charAt(0)}${lastName.charAt(0)}`}
-        </Text>
-      </View>
+      <AvatarWrapper size={size}>
+        <AvatarText>{`${firstName?.charAt(0)}${lastName?.charAt(0)}`}</AvatarText>
+      </AvatarWrapper>
     );
   }
-  return <Image source={{ uri: imageURL }} />;
+  return <AvatarImage size={size} source={{ uri: imageURL }} />;
 };
 
 UserAvatar.defaultProps = {
@@ -24,7 +21,6 @@ UserAvatar.propTypes = {
   imageURL: PropTypes.string,
   firstName: PropTypes.string.isRequired,
   lastName: PropTypes.string.isRequired,
-  theme: PropTypes.string.isRequired,
   size: PropTypes.string,
 };
 

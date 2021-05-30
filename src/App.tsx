@@ -5,20 +5,30 @@
 
 import { Provider } from 'react-redux';
 import { PersistGate } from 'redux-persist/es/integration/react';
-import { store as patientStore, persistor } from './redux/ReduxStore';
+import Config from 'react-native-config';
+import { ThemeProvider } from 'styled-components';
+import { store as appStore, persistor } from './redux/ReduxStore';
 import StatefulAppWrapper from './redux/StatefulAppWrapper';
 import LoadingSpinner from '../shared/views/LoadingSpinner';
+import ThemeExporter from '../shared/themes/Themes';
 
 // @ts-ignore
-const App = () => (
-  <Provider store={patientStore}>
-    <PersistGate
-      loading={<LoadingSpinner visible textContent="Loading..." textStyle={{ color: '#fff' }} />}
-      persistor={persistor}
-    >
-      <StatefulAppWrapper />
-    </PersistGate>
-  </Provider>
-);
+const App = () => {
+  const theme = ThemeExporter[Config.APP_THEME]();
+  return (
+    <ThemeProvider theme={theme}>
+      <Provider store={appStore}>
+        <PersistGate
+          loading={
+            <LoadingSpinner visible textContent="Loading..." textStyle={{ color: '#fff' }} />
+          }
+          persistor={persistor}
+        >
+          <StatefulAppWrapper />
+        </PersistGate>
+      </Provider>
+    </ThemeProvider>
+  );
+};
 
 export default App;

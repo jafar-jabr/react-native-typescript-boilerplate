@@ -1,46 +1,13 @@
 import { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
-import { StyleSheet, View, Text, Modal, ActivityIndicator } from 'react-native';
-
-const styles = StyleSheet.create({
-  activityIndicator: {
-    flex: 1,
-  },
-  background: {
-    alignItems: 'center',
-    bottom: 0,
-    justifyContent: 'center',
-    left: 0,
-    position: 'absolute',
-    right: 0,
-    top: 0,
-  },
-  container: {
-    backgroundColor: 'transparent',
-    bottom: 0,
-    flex: 1,
-    left: 0,
-    position: 'absolute',
-    right: 0,
-    top: 0,
-  },
-  textContainer: {
-    alignItems: 'center',
-    bottom: 0,
-    flex: 1,
-    justifyContent: 'center',
-    left: 0,
-    position: 'absolute',
-    right: 0,
-    top: 0,
-  },
-  textContent: {
-    fontSize: 20,
-    fontWeight: 'bold',
-    height: 50,
-    top: 80,
-  },
-});
+import { Modal } from 'react-native';
+import {
+  ContainerBg,
+  ContainerTxt,
+  SpinnerActivityIndicator,
+  TextContent,
+  Container,
+} from '../styled/loadingSpinner.ltr.styles';
 
 const LoadingSpinner = ({
   visible,
@@ -72,27 +39,20 @@ const LoadingSpinner = ({
 
   const renderDefaultContent = () => {
     return (
-      <View style={styles.background}>
+      <ContainerBg>
         {customIndicator || (
-          <ActivityIndicator
-            color={color}
-            size={size}
-            style={[styles.activityIndicator, { ...indicatorStyle }]}
-          />
+          <SpinnerActivityIndicator color={color} size={size} style={[{ ...indicatorStyle }]} />
         )}
-        <View style={[styles.textContainer, { ...indicatorStyle }]}>
-          <Text style={[styles.textContent, textStyle]}>{textContent}</Text>
-        </View>
-      </View>
+        <ContainerTxt style={[{ ...indicatorStyle }]}>
+          <TextContent style={[textStyle]}>{textContent}</TextContent>
+        </ContainerTxt>
+      </ContainerBg>
     );
   };
   const spinner = (
-    <View
-      style={[styles.container, { backgroundColor: overlayColor }]}
-      key={`spinner_${Date.now()}`}
-    >
+    <Container style={[{ backgroundColor: overlayColor }]} key={`spinner_${Date.now()}`}>
       {children || renderDefaultContent()}
-    </View>
+    </Container>
   );
 
   return (
@@ -107,6 +67,7 @@ const LoadingSpinner = ({
     </Modal>
   );
 };
+
 LoadingSpinner.defaultProps = {
   animation: 'none',
   cancelable: false,
@@ -119,8 +80,11 @@ LoadingSpinner.defaultProps = {
   customIndicator: null,
   indicatorStyle: {},
 };
+
 const animationOptions = ['none', 'slide', 'fade'];
+
 const sizeOptions = ['small', 'normal', 'large'];
+
 LoadingSpinner.propTypes = {
   animation: PropTypes.oneOf(animationOptions),
   visible: PropTypes.bool.isRequired,
@@ -134,4 +98,5 @@ LoadingSpinner.propTypes = {
   size: PropTypes.oneOf(sizeOptions), // 'normal',
   overlayColor: PropTypes.string,
 };
+
 export default LoadingSpinner;

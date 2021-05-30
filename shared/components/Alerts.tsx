@@ -43,7 +43,6 @@ const twoActionsAlert = (
   );
 };
 
-
 export default {
   simpleAlert,
   oneActionAlert,

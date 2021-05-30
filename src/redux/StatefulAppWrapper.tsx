@@ -3,16 +3,16 @@ import { MutableRefObject, useEffect } from 'react';
 import { AppState, StatusBar, View } from 'react-native';
 import { useSelector, shallowEqual, useDispatch } from 'react-redux';
 import { NavigationContainer } from '@react-navigation/native';
+import { getStatusBarHeight } from 'react-native-status-bar-height';
 import MainAppNavigation from '../components/navigation/AppNavigation';
-import { Colors } from '../../shared/themes';
 import { createErrorMessageSelector, createLoadingSelector } from './api/ApiWatchMan';
 import StorageService from '../../shared/services/StorageService';
 import { navigationRef, isMountedRef } from '../../shared/services/NavigationService';
 import { requestLoginError, requestLoginSuccess } from './actions/LoginActions';
 import * as StringConstants from '../../shared/constants/stringConstants.json';
-import GlobalLtrStyle from '../../shared/styles/global.ltr.style';
 import LoadingSpinner from '../../shared/views/LoadingSpinner';
 import { getAuthState } from './StatesGetter';
+import { FlexedView } from '../../shared/styled/global.ltr.styles';
 
 const StatefulAppWrapper = (): JSX.Element => {
   const loadingSelector = createLoadingSelector([]);
@@ -53,8 +53,10 @@ const StatefulAppWrapper = (): JSX.Element => {
     }
   });
   return (
-    <View style={GlobalLtrStyle.FlexView}>
-      <StatusBar backgroundColor={Colors.white} barStyle="light-content" />
+    <FlexedView flex={1} style={{ backgroundColor: 'white' }}>
+      <View style={{ height: getStatusBarHeight(), backgroundColor: 'white' }}>
+        <StatusBar barStyle="dark-content" translucent />
+      </View>
       <NavigationContainer ref={navigationRef}>
         <MainAppNavigation isLoggedIn={isLoggedIn} />
       </NavigationContainer>
@@ -65,7 +67,7 @@ const StatefulAppWrapper = (): JSX.Element => {
           color: '#fff',
         }}
       />
-    </View>
+    </FlexedView>
   );
 };
 

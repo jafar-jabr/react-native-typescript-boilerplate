@@ -1,14 +1,31 @@
-import { Text, Platform, ScrollView, TouchableOpacity, View } from 'react-native';
-import { Divider, Icon } from 'react-native-elements';
+import { Platform, ScrollView, TouchableOpacity, View } from 'react-native';
+import { Divider } from 'react-native-elements';
 import { useDispatch } from 'react-redux';
-import SafeAreaView from 'react-native-safe-area-view';
 import { version } from '../../../package.json';
 import I18n from '../../../shared/I18n/I18n';
 import { requestLogout } from '../../redux/actions/LoginActions';
-
-import NavigationLtrStyle from '../../../shared/styles/navigation.ltr.style';
+import { Row, SafeView } from '../../../shared/styled/global.ltr.styles';
 import UserAvatar from '../../../shared/components/sections/UserAvatar';
 import customDrawerRoutes from './CustomDrawerRoutes';
+import {
+  RatingWrapper,
+  RatingText,
+  ReviewsText,
+  HeaderView,
+  HeaderContainer,
+  UserText,
+  UserEmail,
+  OrdersSection,
+  HeaderSection,
+  OrderItemMenu,
+  MenuIcon,
+  MenuItem,
+  AppVersion,
+  FooterIconView,
+  FooterWrapper,
+  FooterLabel,
+  FlexedYellowView,
+} from '../../../shared/styled/customDrawer.ltr.styles';
 
 const CustomDrawerNavigator = () => {
   const dispatch = useDispatch();
@@ -19,83 +36,79 @@ const CustomDrawerNavigator = () => {
     imgURL: null,
   };
   const reviewStarsView = () => (
-    <View style={NavigationLtrStyle.RatingWrapper}>
-      <View style={NavigationLtrStyle.RatingText}>
-        <Text style={NavigationLtrStyle.ReviewsText}>{I18n.t('reviews').toLowerCase()}</Text>
-      </View>
-    </View>
+    <RatingWrapper>
+      <RatingText>
+        <ReviewsText>{I18n.t('reviews').toLowerCase()}</ReviewsText>
+      </RatingText>
+    </RatingWrapper>
   );
 
   const customDrawerUI = () => (
-    <>
-      <View style={NavigationLtrStyle.HeaderView}>
-        <UserAvatar imageURL={imgURL} firstName={firstName} lastName={lastName} theme="#ffffff" />
-        <View style={NavigationLtrStyle.HeaderContainer}>
-          <View style={NavigationLtrStyle.HeaderRow}>
-            <Text style={NavigationLtrStyle.UserText} numberOfLines={0}>
-              {`${firstName} ${lastName}`}
-            </Text>
-          </View>
-          <View style={NavigationLtrStyle.HeaderRow}>
-            <Text style={NavigationLtrStyle.UserEmail} numberOfLines={1} ellipsizeMode="middle">
+    <SafeView>
+      <HeaderView>
+        <UserAvatar imageURL={imgURL} firstName={firstName} lastName={lastName} />
+        <HeaderContainer>
+          <Row>
+            <UserText numberOfLines={0}>{`${firstName} ${lastName}`}</UserText>
+          </Row>
+          <Row>
+            <UserEmail numberOfLines={1} ellipsizeMode="middle">
               {email}
-            </Text>
+            </UserEmail>
+          </Row>
+          <Row>{reviewStarsView()}</Row>
+        </HeaderContainer>
+      </HeaderView>
+      <ScrollView>
+        {customDrawerRoutes().map((section, index) => (
+          <View key={index.toString()}>
+            <OrdersSection>
+              <HeaderSection>{section.title}</HeaderSection>
+              {section.data.map((item) => (
+                <TouchableOpacity key={item.title} onPress={item.onclick}>
+                  <OrderItemMenu>
+                    <MenuIcon name={item.icon} />
+                    <MenuItem>{item.title}</MenuItem>
+                  </OrderItemMenu>
+                </TouchableOpacity>
+              ))}
+            </OrdersSection>
+            <Divider />
           </View>
-          <View style={NavigationLtrStyle.HeaderRow}>{reviewStarsView()}</View>
-        </View>
-      </View>
-      <SafeAreaView style={NavigationLtrStyle.MenuSafeAreaView}>
-        <ScrollView>
-          {customDrawerRoutes().map((section, index) => (
-            <View key={index.toString()}>
-              <View style={NavigationLtrStyle.OrdersSection}>
-                <Text style={NavigationLtrStyle.HeaderSection}>{section.title}</Text>
-                {section.data.map((item) => (
-                  <TouchableOpacity key={item.title} onPress={item.onclick}>
-                    <View style={NavigationLtrStyle.OrderItemMenu}>
-                      <Icon style={NavigationLtrStyle.MenuIcon} name={item.icon} />
-                      <Text style={NavigationLtrStyle.MenuItem}>{item.title}</Text>
-                    </View>
-                  </TouchableOpacity>
-                ))}
-              </View>
-              <Divider />
-            </View>
-          ))}
-          <Text style={NavigationLtrStyle.AppVersion}>{`v${version}`}</Text>
-        </ScrollView>
-      </SafeAreaView>
-    </>
+        ))}
+        <AppVersion>{`v${version}`}</AppVersion>
+      </ScrollView>
+    </SafeView>
   );
 
   const logout = () => {
     dispatch(requestLogout({}));
   };
   const androidCustomDrawerUI = () => (
-    <SafeAreaView style={NavigationLtrStyle.MenuView}>
+    <SafeView>
       {customDrawerUI()}
       <TouchableOpacity onPress={logout}>
-        <View style={NavigationLtrStyle.FooterWrapper}>
-          <View style={NavigationLtrStyle.FooterIconView}>
-            <Icon style={NavigationLtrStyle.MenuIcon} name="exit-to-app" />
-          </View>
-          <Text style={NavigationLtrStyle.FooterLabel}>{I18n.t('logout_button')}</Text>
-        </View>
+        <FooterWrapper>
+          <FooterIconView>
+            <MenuIcon name="exit-to-app" />
+          </FooterIconView>
+          <FooterLabel>{I18n.t('logout_button')}</FooterLabel>
+        </FooterWrapper>
       </TouchableOpacity>
-    </SafeAreaView>
+    </SafeView>
   );
   const iOSCustomDrawerUI = () => (
-    <View style={NavigationLtrStyle.FlexedYellowView}>
-      <SafeAreaView style={NavigationLtrStyle.MenuView}>{customDrawerUI()}</SafeAreaView>
+    <FlexedYellowView>
+      <SafeView>{customDrawerUI()}</SafeView>
       <TouchableOpacity onPress={logout}>
-        <View style={NavigationLtrStyle.FooterWrapper}>
-          <View style={NavigationLtrStyle.FooterIconView}>
-            <Icon style={NavigationLtrStyle.MenuIcon} name="exit-to-app" />
-          </View>
-          <Text style={NavigationLtrStyle.FooterLabel}>{I18n.t('logout_button')}</Text>
-        </View>
+        <FooterWrapper>
+          <FooterIconView>
+            <MenuIcon name="exit-to-app" />
+          </FooterIconView>
+          <FooterLabel>{I18n.t('logout_button')}</FooterLabel>
+        </FooterWrapper>
       </TouchableOpacity>
-    </View>
+    </FlexedYellowView>
   );
   return {
     ...(Platform.OS === 'ios' ? iOSCustomDrawerUI() : androidCustomDrawerUI()),

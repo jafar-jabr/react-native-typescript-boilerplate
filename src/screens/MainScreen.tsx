@@ -1,14 +1,14 @@
-import { SafeAreaView, ScrollView, Text, Image } from 'react-native';
+import { Text } from 'react-native';
 import { debounce } from 'lodash';
 import Config from 'react-native-config';
 import I18n from '../../shared/I18n/I18n';
-import HomePageLtrStyle from '../../shared/styles/homePage.ltr.style';
 import Header from '../components/sections/header';
 import HamburgerButton from '../../shared/components/buttons/HamburgerButton';
 import { Images } from '../../shared/themes';
 import RegularButton from '../../shared/components/buttons/RegularButton';
 import Alerts from '../../shared/components/Alerts';
 import ImagePickingService from '../../shared/services/ImagePickingService';
+import { CustomScroll, LogoImage, SafeView } from '../../shared/styled/global.ltr.styles';
 
 const MainScreen = (): JSX.Element => {
   const onImagePicked = (photoResponse): void => {
@@ -29,16 +29,15 @@ const MainScreen = (): JSX.Element => {
     );
   };
   return (
-    <>
+    <SafeView>
       <Header leftComponent={<HamburgerButton />} />
-      <SafeAreaView>
-        <ScrollView contentInsetAdjustmentBehavior="automatic" style={HomePageLtrStyle.scrollView}>
-          <Image style={HomePageLtrStyle.logo} source={Images.logo} />
-          <Text>{`${I18n.t('homeScreen.title')} to ${Config.APP_NAME}`}</Text>
-          <RegularButton title={I18n.t('homeScreen.camera')} onPress={getImage} />
-        </ScrollView>
-      </SafeAreaView>
-    </>
+      <CustomScroll contentInsetAdjustmentBehavior="automatic">
+        <LogoImage source={Images.logo} />
+        <Text>{`${I18n.t('homeScreen.title')} to ${Config.APP_NAME}`}</Text>
+        <RegularButton title={I18n.t('homeScreen.camera')} onPress={getImage} />
+      </CustomScroll>
+    </SafeView>
   );
 };
+
 export default MainScreen;
