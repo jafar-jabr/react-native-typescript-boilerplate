@@ -23,5 +23,6 @@
   "info": "Info",
   "chooseCameraOrGallery": "Choose Camera Or Gallery",
   "camera": "Camera",
-  "gallery": "Gallery"
+  "gallery": "Gallery",
+  "logoutButton": "logout"
 }

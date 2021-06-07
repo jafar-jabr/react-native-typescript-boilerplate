@@ -92,7 +92,7 @@ const CustomDrawerNavigator = () => {
           <FooterIconView>
             <MenuIcon name="exit-to-app" />
           </FooterIconView>
-          <FooterLabel>{I18n.t('logout_button')}</FooterLabel>
+          <FooterLabel>{I18n.t('logoutButton')}</FooterLabel>
         </FooterWrapper>
       </TouchableOpacity>
     </SafeView>
@@ -105,7 +105,7 @@ const CustomDrawerNavigator = () => {
           <FooterIconView>
             <MenuIcon name="exit-to-app" />
           </FooterIconView>
-          <FooterLabel>{I18n.t('logout_button')}</FooterLabel>
+          <FooterLabel>{I18n.t('logoutButton')}</FooterLabel>
         </FooterWrapper>
       </TouchableOpacity>
     </FlexedYellowView>
