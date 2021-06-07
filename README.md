@@ -3,7 +3,8 @@
 Maintained, updated, well-structured
 
 include
-- navigation
+- @react-navigation 5
 - redux saga
 - camera
 - react-native-config (.env)
+- styled-components
