@@ -1,0 +1,30 @@
+{
+  "yes": "Yes",
+  "no": "No",
+  "save": "Save",
+  "error": "Error",
+  "success": "Success",
+  "ok": "OK",
+  "cancel": "Cancel",
+  "continue": "Continue",
+  "delete": "Delete",
+  "dashboard": "Dashboard",
+  "accounting": "Accounting",
+  "email": "Email",
+  "username": "Username",
+  "password": "Password",
+  "homeScreen": {
+    "title": "welcome",
+    "sub_title": "here we go",
+    "camera": "Open Camera"
+  },
+  "reviews": "Reviews",
+  "mainScreen": "Home",
+  "aboutUs": "About Us",
+  "login": "Login",
+  "info": "Info",
+  "chooseCameraOrGallery": "Choose Camera Or Gallery",
+  "camera": "Camera",
+  "gallery": "Gallery",
+  "logoutButton": "logout"
+}

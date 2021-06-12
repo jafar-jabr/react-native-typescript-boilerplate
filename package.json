@@ -24,10 +24,21 @@
   },
   "scripts": {
     "android": "react-native run-android",
-    "ios": "react-native run-ios",
+    "android:prod": "cd android && ./gradlew clean && rm -rf build && rm -rf app/build && cd .. && react-native run-android --variant release",
+    "ios": "react-native run-ios --scheme awesomeApp --configuration Debug",
     "start": "react-native start  --reset-cache",
     "test": "jest",
-    "lint": "eslint . -c .eslintrc.json --ext js,jsx,ts,tsx"
+    "lint": "eslint . -c .eslintrc.json --ext js,jsx,ts,tsx",
+    "lint:fix": "eslint . -c .eslintrc.json --ext js,jsx,ts,tsx --quiet --fix",
+    "check-updates": "npm-check --skip-unused",
+    "pre-build:dev:android": "react-native bundle --platform android --dev true --entry-file index.js --bundle-output android/app/src/main/assets/index.android.bundle --assets-dest android/app/src/main/res",
+    "pre-build:prod:android": "react-native bundle --platform android --dev false --entry-file index.js --bundle-output android/app/src/main/assets/index.android.bundle --assets-dest android/app/src/main/res",
+    "pre-build:dev:ios": "rm -rf ~/Library/Developer/Xcode/DerivedData  && react-native bundle --dev true --entry-file index.js --bundle-output ios/main.jsbundle --platform ios",
+    "pre-build:prod:ios": "rm -rf ~/Library/Developer/Xcode/DerivedData && react-native bundle --dev false --entry-file index.js --bundle-output ios/main.jsbundle --platform ios",
+    "reset-all:android": "rm -rf node_modules && rm yarn.lock && rm -rf android/build && rm -rf android/app/build && yarn install && watchman watch-del-all && cd android && ./gradlew clean && rm -rf build && rm -rf app/build && cd .. ",
+    "reset-all:ios": "rm -rf node_modules && rm yarn.lock && yarn install && watchman watch-del-all && cd ios && rm -rf Pods && pod install --repo-update && xcodebuild clean && cd ..",
+    "watchman:reset": "watchman watch-del-all && watchman shutdown-server"
+
   },
   "dependencies": {
     "@react-native-async-storage/async-storage": "1.15.5",
@@ -46,7 +57,7 @@
     "react-native": "0.64.2",
     "react-native-camera": "3.44.1",
     "react-native-config": "1.4.2",
-    "react-native-elements": "3.4.1",
+    "react-native-elements": "3.4.2",
     "react-native-fs": "2.18.0",
     "react-native-gesture-handler": "1.10.3",
     "react-native-image-picker": "4.0.3",
@@ -64,11 +75,12 @@
     "styled-components": "5.3.0"
   },
   "devDependencies": {
-    "@babel/core": "7.14.3",
+    "@babel/core": "7.13.8",
+    "@babel/plugin-transform-react-jsx": "^7.12.13",
     "@babel/runtime": "7.14.0",
     "@react-native-community/eslint-config": "2.0.0",
     "@types/jest": "26.0.23",
-    "@types/react": "17.0.9",
+    "@types/react": "17.0.11",
     "@types/react-native": "0.64.10",
     "@types/react-test-renderer": "17.0.1",
     "@typescript-eslint/eslint-plugin": "4.26.1",

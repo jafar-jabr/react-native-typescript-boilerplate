@@ -1,0 +1,28 @@
+{
+  "yes": "Yes",
+  "no": "No",
+  "save": "Save",
+  "error": "Error",
+  "success": "Success",
+  "ok": "OK",
+  "cancel": "Cancel",
+  "continue": "Continue",
+  "delete": "Delete",
+  "wrong_user": "You don't have access to this app!",
+  "dashboard": "Dashboard",
+  "accounting": "Accounting",
+  "homeScreen": {
+    "title": "welcome",
+    "sub_title": "here we go",
+    "camera": "Open Camera"
+  },
+  "reviews": "Reviews",
+  "mainScreen": "Home",
+  "aboutUs": "About Us",
+  "login": "Login",
+  "info": "Info",
+  "chooseCameraOrGallery": "Choose Camera Or Gallery",
+  "camera": "Camera",
+  "gallery": "Gallery",
+  "logoutButton": "logout"
+}

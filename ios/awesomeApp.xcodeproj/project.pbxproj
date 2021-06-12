@@ -9,17 +9,15 @@
 /* Begin PBXBuildFile section */
 		00E356F31AD99517003FC87E /* awesomeAppTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* awesomeAppTests.m */; };
 		1065AAF0B9A331FBDBAB2B6D /* libPods-awesomeApp-tvOSTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 184063B1247BD3CB000A2E2B /* libPods-awesomeApp-tvOSTests.a */; };
-		13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.m */; };
 		13B07FBD1A68108700A75B9A /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB11A68108700A75B9A /* LaunchScreen.xib */; };
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
-		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		184063AC247BD388000A2E2B /* libCocoaAsyncSocket.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 184063AB247BD388000A2E2B /* libCocoaAsyncSocket.a */; };
 		184063B4247BD3CB000A2E2B /* libPods-awesomeApp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 184063B3247BD3CB000A2E2B /* libPods-awesomeApp.a */; };
+		1870526A2674CCCD00F8EC98 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187052692674CCCD00F8EC98 /* AppDelegate.swift */; };
+		1870526B2674CCD400F8EC98 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187052692674CCCD00F8EC98 /* AppDelegate.swift */; };
 		1890DC4B247C0F8100302109 /* libRNVectorIcons.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1890DC4A247C0F8100302109 /* libRNVectorIcons.a */; };
 		1890DC4D247C59C600302109 /* libRNPermissions.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1890DC4C247C59C600302109 /* libRNPermissions.a */; };
-		2D02E4BC1E0B4A80006451C7 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.m */; };
 		2D02E4BD1E0B4A84006451C7 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
-		2D02E4BF1E0B4AB3006451C7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		2DCD954D1E0B4F2C00145EB5 /* awesomeAppTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* awesomeAppTests.m */; };
 		3D0D6353A7E5AF7159CD3685 /* libPods-awesomeApp-tvOSTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ECFCAC223FB1BD6FA0ECC142 /* libPods-awesomeApp-tvOSTests.a */; };
 		46B0505EF0DC16EEBA305321 /* libPods-awesomeApp-awesomeAppTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 80E3A5E3D62009404A2A3947 /* libPods-awesomeApp-awesomeAppTests.a */; };
@@ -52,18 +50,17 @@
 		00E356F21AD99517003FC87E /* awesomeAppTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = awesomeAppTests.m; sourceTree = "<group>"; };
 		0CC4DDC8E6899FA95DCD58D5 /* Pods-awesomeApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-awesomeApp.debug.xcconfig"; path = "Target Support Files/Pods-awesomeApp/Pods-awesomeApp.debug.xcconfig"; sourceTree = "<group>"; };
 		13B07F961A680F5B00A75B9A /* awesomeApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = awesomeApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		13B07FAF1A68108700A75B9A /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = awesomeApp/AppDelegate.h; sourceTree = "<group>"; };
-		13B07FB01A68108700A75B9A /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = awesomeApp/AppDelegate.m; sourceTree = "<group>"; };
 		13B07FB21A68108700A75B9A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		13B07FB51A68108700A75B9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = awesomeApp/Images.xcassets; sourceTree = "<group>"; };
 		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = awesomeApp/Info.plist; sourceTree = "<group>"; };
-		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = awesomeApp/main.m; sourceTree = "<group>"; };
 		184063A9247BC48C000A2E2B /* libCocoaAsyncSocket.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libCocoaAsyncSocket.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		184063AB247BD388000A2E2B /* libCocoaAsyncSocket.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libCocoaAsyncSocket.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		184063AD247BD3CB000A2E2B /* libPods-awesomeApp-awesomeAppTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = "libPods-awesomeApp-awesomeAppTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		184063AF247BD3CB000A2E2B /* libPods-awesomeApp-tvOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = "libPods-awesomeApp-tvOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		184063B1247BD3CB000A2E2B /* libPods-awesomeApp-tvOSTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = "libPods-awesomeApp-tvOSTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		184063B3247BD3CB000A2E2B /* libPods-awesomeApp.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = "libPods-awesomeApp.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		187052682674CCCC00F8EC98 /* awesomeApp-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "awesomeApp-Bridging-Header.h"; sourceTree = "<group>"; };
+		187052692674CCCD00F8EC98 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = awesomeApp/AppDelegate.swift; sourceTree = "<group>"; };
 		1890DC4A247C0F8100302109 /* libRNVectorIcons.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libRNVectorIcons.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		1890DC4C247C59C600302109 /* libRNPermissions.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libRNPermissions.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		1A13625A2521DA570C748B6A /* Pods-awesomeApp-awesomeAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-awesomeApp-awesomeAppTests.debug.xcconfig"; path = "Target Support Files/Pods-awesomeApp-awesomeAppTests/Pods-awesomeApp-awesomeAppTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -145,13 +142,12 @@
 		13B07FAE1A68108700A75B9A /* awesomeApp */ = {
 			isa = PBXGroup;
 			children = (
+				187052682674CCCC00F8EC98 /* awesomeApp-Bridging-Header.h */,
+				187052692674CCCD00F8EC98 /* AppDelegate.swift */,
 				008F07F21AC5B25A0029DE68 /* main.jsbundle */,
-				13B07FAF1A68108700A75B9A /* AppDelegate.h */,
-				13B07FB01A68108700A75B9A /* AppDelegate.m */,
 				13B07FB51A68108700A75B9A /* Images.xcassets */,
 				13B07FB61A68108700A75B9A /* Info.plist */,
 				13B07FB11A68108700A75B9A /* LaunchScreen.xib */,
-				13B07FB71A68108700A75B9A /* main.m */,
 			);
 			name = awesomeApp;
 			sourceTree = "<group>";
@@ -331,7 +327,7 @@
 						TestTargetID = 13B07F861A680F5B00A75B9A;
 					};
 					13B07F861A680F5B00A75B9A = {
-						LastSwiftMigration = 1120;
+						LastSwiftMigration = 1250;
 					};
 					2D02E47A1E0B4A5D006451C7 = {
 						CreatedOnToolsVersion = 8.2.1;
@@ -705,8 +701,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */,
-				13B07FC11A68108700A75B9A /* main.m in Sources */,
+				1870526A2674CCCD00F8EC98 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -714,8 +709,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2D02E4BF1E0B4AB3006451C7 /* main.m in Sources */,
-				2D02E4BC1E0B4A80006451C7 /* AppDelegate.m in Sources */,
+				1870526B2674CCD400F8EC98 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -759,6 +753,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 1A13625A2521DA570C748B6A /* Pods-awesomeApp-awesomeAppTests.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
@@ -782,6 +777,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 755970342ACB233FBC1BA4E4 /* Pods-awesomeApp-awesomeAppTests.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				COPY_PHASE_STRIP = NO;
 				INFOPLIST_FILE = awesomeAppTests/Info.plist;
@@ -819,6 +815,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = awesomeApp;
+				SWIFT_OBJC_BRIDGING_HEADER = "awesomeApp-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -841,6 +838,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = awesomeApp;
+				SWIFT_OBJC_BRIDGING_HEADER = "awesomeApp-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
 			};
@@ -906,6 +904,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = BA25632F392C604BE98B652C /* Pods-awesomeApp-tvOSTests.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
@@ -933,6 +932,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 5D96310E35DCDF60B014C053 /* Pods-awesomeApp-tvOSTests.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
@@ -1003,7 +1003,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "/usr/lib/swift $(inherited)";
 				LIBRARY_SEARCH_PATHS = (
 					"\"$(TOOLCHAIN_DIR)/usr/lib/swift/$(PLATFORM_NAME)\"",
@@ -1056,7 +1056,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "/usr/lib/swift $(inherited)";
 				LIBRARY_SEARCH_PATHS = (
 					"\"$(TOOLCHAIN_DIR)/usr/lib/swift/$(PLATFORM_NAME)\"",
