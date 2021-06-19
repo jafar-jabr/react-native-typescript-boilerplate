@@ -1,15 +1,11 @@
-import {
-  Keyboard,
-  TouchableWithoutFeedback,
-  KeyboardAvoidingView,
-} from 'react-native';
+import { Keyboard, TouchableWithoutFeedback, KeyboardAvoidingView } from 'react-native';
 import Config from 'react-native-config';
 import { useState } from 'react';
-import HamburgerButton from '../../../shared/components/buttons/HamburgerButton';
-import Header from '../../components/sections/header';
-import { SafeView, FlexedView, Space } from '../../../shared/styled/global.ltr.styles';
-import { LoginButton, LogoText } from '../../../shared/styled/login.ltr.styles';
-import FloatPlaceholderTextInput from '../../../shared/components/sections/FloatPlaceholderTextInput';
+import HamburgerButton from 'shared/components/buttons/HamburgerButton';
+import Header from 'src/components/sections/header';
+import { SafeView, FlexedView, Space } from 'shared/styled/global.ltr.styles';
+import { LoginButton, LogoText } from 'shared/styled/login.ltr.styles';
+import FloatPlaceholderTextInput from 'shared/components/sections/FloatPlaceholderTextInput';
 
 const LoginScreen = (): JSX.Element => {
   const [user, setUser] = useState('');

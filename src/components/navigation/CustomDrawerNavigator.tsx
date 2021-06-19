@@ -1,12 +1,11 @@
 import { Platform, ScrollView, TouchableOpacity, View } from 'react-native';
 import { Divider } from 'react-native-elements';
 import { useDispatch } from 'react-redux';
-import { version } from '../../../package.json';
-import I18n from '../../../shared/I18n/I18n';
-import { requestLogout } from '../../redux/actions/LoginActions';
-import { Row, SafeView } from '../../../shared/styled/global.ltr.styles';
-import UserAvatar from '../../../shared/components/sections/UserAvatar';
-import customDrawerRoutes from './CustomDrawerRoutes';
+import I18n from 'shared/I18n/I18n';
+import { requestLogout } from 'src/redux/actions/LoginActions';
+import { Row, SafeView } from 'shared/styled/global.ltr.styles';
+import UserAvatar from 'shared/components/sections/UserAvatar';
+import customDrawerRoutes from 'src/components/navigation/CustomDrawerRoutes';
 import {
   RatingWrapper,
   RatingText,
@@ -25,7 +24,8 @@ import {
   FooterWrapper,
   FooterLabel,
   FlexedYellowView,
-} from '../../../shared/styled/customDrawer.ltr.styles';
+} from 'shared/styled/customDrawer.ltr.styles';
+import { version } from '../../../package.json';
 
 const CustomDrawerNavigator = () => {
   const dispatch = useDispatch();

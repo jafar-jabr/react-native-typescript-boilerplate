@@ -2,8 +2,8 @@ import { persistStore, persistCombineReducers } from 'redux-persist';
 import { applyMiddleware, compose, createStore } from 'redux';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import createSagaMiddleware from 'redux-saga';
-import AuthReducer from './reducers/AuthReducer';
-import { LOGOUT_SUCCESS } from './types/loginTypes';
+import AuthReducer from 'src/redux/reducers/AuthReducer';
+import { LOGOUT_SUCCESS } from 'src/redux/types/loginTypes';
 
 // @ts-ignore
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;

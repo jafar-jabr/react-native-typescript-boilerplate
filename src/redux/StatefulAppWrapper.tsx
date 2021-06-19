@@ -4,15 +4,15 @@ import { AppState, StatusBar, View } from 'react-native';
 import { useSelector, shallowEqual, useDispatch } from 'react-redux';
 import { NavigationContainer } from '@react-navigation/native';
 import { getStatusBarHeight } from 'react-native-status-bar-height';
-import MainAppNavigation from '../components/navigation/AppNavigation';
-import { createErrorMessageSelector, createLoadingSelector } from './api/ApiWatchMan';
-import StorageService from '../../shared/services/StorageService';
-import { navigationRef, isMountedRef } from '../../shared/services/NavigationService';
-import { requestLoginError, requestLoginSuccess } from './actions/LoginActions';
-import * as StringConstants from '../../shared/constants/stringConstants.json';
-import LoadingSpinner from '../../shared/views/LoadingSpinner';
-import { getAuthState } from './StatesGetter';
-import { FlexedView } from '../../shared/styled/global.ltr.styles';
+import MainAppNavigation from 'src/components/navigation/AppNavigation';
+import { createErrorMessageSelector, createLoadingSelector } from 'src/redux/api/ApiWatchMan';
+import StorageService from 'shared/services/StorageService';
+import { navigationRef, isMountedRef } from 'shared/services/NavigationService';
+import { requestLoginError, requestLoginSuccess } from 'src/redux/actions/LoginActions';
+import * as StringConstants from 'shared/constants/stringConstants.json';
+import LoadingSpinner from 'shared/views/LoadingSpinner';
+import { getAuthState } from 'src/redux/StatesGetter';
+import { FlexedView } from 'shared/styled/global.ltr.styles';
 
 const StatefulAppWrapper = (): JSX.Element => {
   const loadingSelector = createLoadingSelector([]);

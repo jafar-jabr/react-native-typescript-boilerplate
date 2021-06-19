@@ -4,7 +4,7 @@ import UIKit
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterDelegate {
-  
+
   var window: UIWindow?
   var bridge: RCTBridge!
 
@@ -12,7 +12,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
     initializeFlipper(with: application)
     // Use Firebase library to configure APIs
    // FirebaseApp.configure()
- 
+
     //inite notifications if wanted
     if #available(iOS 10.0, *) {
       UNUserNotificationCenter.current().delegate = self
@@ -43,7 +43,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
 
   }
 
-  
  private func initializeFlipper(with application: UIApplication) {
       #if DEBUG
       #if FB_SONARKIT_ENABLED
@@ -59,12 +58,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
       #endif
       #endif
     }
-
 }
 
 extension AppDelegate:RCTBridgeDelegate{
   func sourceURL(for bridge: RCTBridge!) -> URL! {
     return RCTBundleURLProvider.sharedSettings().jsBundleURL(forBundleRoot: "index", fallbackResource: nil)
-    
   }
 }

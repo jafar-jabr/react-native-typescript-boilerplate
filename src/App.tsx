@@ -7,12 +7,11 @@ import { Provider } from 'react-redux';
 import { PersistGate } from 'redux-persist/es/integration/react';
 import Config from 'react-native-config';
 import { ThemeProvider } from 'styled-components';
-import { store as appStore, persistor } from './redux/ReduxStore';
-import StatefulAppWrapper from './redux/StatefulAppWrapper';
-import LoadingSpinner from '../shared/views/LoadingSpinner';
-import ThemeExporter from '../shared/themes/Themes';
+import { store as appStore, persistor } from 'src/redux/ReduxStore';
+import StatefulAppWrapper from 'src/redux/StatefulAppWrapper';
+import LoadingSpinner from 'shared/views/LoadingSpinner';
+import ThemeExporter from 'shared/themes/Themes';
 
-// @ts-ignore
 const App = () => {
   const theme = ThemeExporter[Config.APP_THEME]();
   return (

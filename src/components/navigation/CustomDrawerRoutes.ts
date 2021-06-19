@@ -1,5 +1,5 @@
-import I18n from '../../../shared/I18n/I18n';
-import * as NavigationService from '../../../shared/services/NavigationService';
+import I18n from 'shared/I18n/I18n';
+import * as NavigationService from 'shared/services/NavigationService';
 
 const customDrawerRoutes = () => {
   const defaultAction = (path) => {

@@ -6,8 +6,6 @@ import com.facebook.react.ReactActivity
 import java.util.logging.Logger
 
 class MainActivity() : ReactActivity() {
-    var onDataPass: OndataPass? = null
-
     override fun onCreate(savedInstanceState: Bundle?, persistentState: PersistableBundle?) {
         super.onCreate(savedInstanceState, persistentState)
 
@@ -24,8 +22,6 @@ class MainActivity() : ReactActivity() {
                 };
             }
         }
-        Log.warning("dataPassed befor return ="+passeData)
-        return passeData // the idea is to read this name from resources
     }
 
 }

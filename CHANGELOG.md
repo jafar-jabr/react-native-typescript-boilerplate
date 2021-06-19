@@ -38,3 +38,14 @@ src/screens/MainScreen.tsx
 src/screens/auth/LoginScreen.tsx
 src/screens/staticScreens/AboutUsScreen.tsx
 src/screens/staticScreens/SplashScreen.tsx
+#######################
+Jafar jabr
+@2021/06/08_01:05:44
+ON
+* master
+ios/Podfile
+ios/Podfile.lock
+ios/awesomeApp.xcodeproj/project.pbxproj
+shared/I18n/locales/en.json
+shared/I18n/locales/ro.json
+src/components/navigation/CustomDrawerNavigator.tsx

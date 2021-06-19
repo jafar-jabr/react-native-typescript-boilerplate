@@ -1,14 +1,14 @@
 import { Text } from 'react-native';
 import { debounce } from 'lodash';
 import Config from 'react-native-config';
-import I18n from '../../shared/I18n/I18n';
-import Header from '../components/sections/header';
-import HamburgerButton from '../../shared/components/buttons/HamburgerButton';
-import { Images } from '../../shared/themes';
-import RegularButton from '../../shared/components/buttons/RegularButton';
-import Alerts from '../../shared/components/Alerts';
-import ImagePickingService from '../../shared/services/ImagePickingService';
-import { CustomScroll, LogoImage, SafeView } from '../../shared/styled/global.ltr.styles';
+import I18n from 'shared/I18n/I18n';
+import Header from 'src/components/sections/header';
+import HamburgerButton from 'shared/components/buttons/HamburgerButton';
+import { Images } from 'shared/themes';
+import RegularButton from 'shared/components/buttons/RegularButton';
+import Alerts from 'shared/components/Alerts';
+import ImagePickingService from 'shared/services/ImagePickingService';
+import { CustomScroll, LogoImage, SafeView } from 'shared/styled/global.ltr.styles';
 
 const MainScreen = (): JSX.Element => {
   const onImagePicked = (photoResponse): void => {

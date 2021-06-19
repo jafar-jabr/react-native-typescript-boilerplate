@@ -14,7 +14,7 @@ import {
   REFRESH_TOKEN_ERROR,
   REFRESH_TOKEN_REQUEST,
   REFRESH_TOKEN_SUCCESS,
-} from '../types/loginTypes';
+} from 'src/redux/types/loginTypes';
 
 const requestLogin = (payload) => ({
   type: LOGIN_REQUEST,
