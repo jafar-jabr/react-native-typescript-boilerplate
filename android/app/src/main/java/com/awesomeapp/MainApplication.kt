@@ -8,7 +8,6 @@ import com.facebook.react.ReactNativeHost
 import com.facebook.react.ReactPackage
 
 class MainApplication : Application(), ReactApplication  {
-    var onDataPass: OndataPass? = null
 
     private val mReactNativeHost: ReactNativeHost = object : ReactNativeHost(this) {
         override fun getUseDeveloperSupport(): Boolean {
@@ -33,8 +32,6 @@ class MainApplication : Application(), ReactApplication  {
 
     override fun onCreate() {
         super.onCreate()
-        val mainActivity = MainActivity()
-        mainActivity.onDataPass?.onDataPass(this.resources.getString(R.string.app_name))
         SoLoader.init(this,  /* native exopackage */false)
     }
 }
