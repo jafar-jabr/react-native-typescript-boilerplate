@@ -14,7 +14,9 @@
     "react-native",
     "typescript",
     "redux",
-    "redux-saga"
+    "redux-saga",
+    "kotlin",
+    "swfit"
   ],
   "description": "React Native Boilerplate, TypeScript with @react-native-navigation and redux-saga",
   "author": {

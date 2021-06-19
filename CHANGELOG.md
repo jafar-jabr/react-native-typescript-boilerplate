@@ -49,3 +49,29 @@ ios/awesomeApp.xcodeproj/project.pbxproj
 shared/I18n/locales/en.json
 shared/I18n/locales/ro.json
 src/components/navigation/CustomDrawerNavigator.tsx
+#######################
+Jafar jabr
+@2021/06/19_11:05:36
+ON
+* master
+.eslintrc.json
+CHANGELOG.md
+android/app/src/main/java/com/awesomeapp/MainActivity.kt
+android/app/src/main/java/com/awesomeapp/OndataPass.kt
+ios/Podfile.lock
+ios/awesomeApp/AppDelegate.swift
+package.json
+shared/package.json
+src/App.tsx
+src/components/navigation/AppNavigation.tsx
+src/components/navigation/CustomDrawerNavigator.tsx
+src/components/navigation/CustomDrawerRoutes.ts
+src/package.json
+src/redux/ReduxStore.tsx
+src/redux/StatefulAppWrapper.tsx
+src/redux/actions/LoginActions.ts
+src/screens/MainScreen.tsx
+src/screens/auth/LoginScreen.tsx
+src/screens/staticScreens/AboutUsScreen.tsx
+src/screens/staticScreens/SplashScreen.tsx
+tsconfig.json
