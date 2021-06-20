@@ -1,9 +1,8 @@
 import I18n from 'i18n-js';
 import { MutableRefObject, useEffect } from 'react';
-import { AppState, StatusBar, View } from 'react-native';
+import { AppState } from 'react-native';
 import { useSelector, shallowEqual, useDispatch } from 'react-redux';
 import { NavigationContainer } from '@react-navigation/native';
-import { getStatusBarHeight } from 'react-native-status-bar-height';
 import MainAppNavigation from 'src/components/navigation/AppNavigation';
 import { createErrorMessageSelector, createLoadingSelector } from 'src/redux/api/ApiWatchMan';
 import StorageService from 'shared/services/StorageService';
@@ -54,9 +53,6 @@ const StatefulAppWrapper = (): JSX.Element => {
   });
   return (
     <SafeAreaProvider style={{ backgroundColor: 'white' }}>
-      <View style={{ height: getStatusBarHeight(), backgroundColor: 'white' }}>
-        <StatusBar barStyle="dark-content" translucent />
-      </View>
       <NavigationContainer ref={navigationRef}>
         <MainAppNavigation isLoggedIn={isLoggedIn} />
       </NavigationContainer>

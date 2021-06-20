@@ -85,3 +85,12 @@ README.md
 android/app/src/main/java/com/awesomeapp/MainActivity.kt
 android/app/src/main/java/com/awesomeapp/MainApplication.kt
 package.json
+#######################
+Jafar jabr
+@2021/06/20_11:56:37
+ON
+* master
+CHANGELOG.md
+android/app/src/main/java/com/awesomeapp/MainApplication.kt
+shared/styled/global.ltr.styles.ts
+src/redux/StatefulAppWrapper.tsx
