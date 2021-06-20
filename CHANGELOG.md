@@ -75,3 +75,13 @@ src/screens/auth/LoginScreen.tsx
 src/screens/staticScreens/AboutUsScreen.tsx
 src/screens/staticScreens/SplashScreen.tsx
 tsconfig.json
+#######################
+Jafar jabr
+@2021/06/19_14:09:03
+ON
+* master
+CHANGELOG.md
+README.md
+android/app/src/main/java/com/awesomeapp/MainActivity.kt
+android/app/src/main/java/com/awesomeapp/MainApplication.kt
+package.json

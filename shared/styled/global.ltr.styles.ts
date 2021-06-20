@@ -1,10 +1,10 @@
 // eslint-disable-next-line import/no-extraneous-dependencies
 import styled from 'styled-components/native';
+import { SafeAreaView } from 'react-native-safe-area-context';
 import {
   ActivityIndicator,
   Dimensions,
   FlatList,
-  SafeAreaView,
   Text,
   ScrollView,
   SectionList,
@@ -18,7 +18,6 @@ import { CheckBox, Divider, Header, Icon, ListItem, Overlay } from 'react-native
 
 export const SafeView = styled(SafeAreaView).attrs({
   flex: 1,
-  // paddingTop: getStatusBarHeight(),
 })`
   background-color: ${(props) => props.theme.colors.background};
 `;

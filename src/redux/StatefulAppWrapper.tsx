@@ -12,7 +12,7 @@ import { requestLoginError, requestLoginSuccess } from 'src/redux/actions/LoginA
 import * as StringConstants from 'shared/constants/stringConstants.json';
 import LoadingSpinner from 'shared/views/LoadingSpinner';
 import { getAuthState } from 'src/redux/StatesGetter';
-import { FlexedView } from 'shared/styled/global.ltr.styles';
+import { SafeAreaProvider } from 'react-native-safe-area-context';
 
 const StatefulAppWrapper = (): JSX.Element => {
   const loadingSelector = createLoadingSelector([]);
@@ -53,7 +53,7 @@ const StatefulAppWrapper = (): JSX.Element => {
     }
   });
   return (
-    <FlexedView flex={1} style={{ backgroundColor: 'white' }}>
+    <SafeAreaProvider style={{ backgroundColor: 'white' }}>
       <View style={{ height: getStatusBarHeight(), backgroundColor: 'white' }}>
         <StatusBar barStyle="dark-content" translucent />
       </View>
@@ -67,7 +67,7 @@ const StatefulAppWrapper = (): JSX.Element => {
           color: '#fff',
         }}
       />
-    </FlexedView>
+    </SafeAreaProvider>
   );
 };
 
