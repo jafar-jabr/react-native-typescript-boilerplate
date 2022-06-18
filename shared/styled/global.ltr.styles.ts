@@ -1,3 +1,4 @@
+import React from "react";
 // eslint-disable-next-line import/no-extraneous-dependencies
 import styled from 'styled-components/native';
 import { SafeAreaView } from 'react-native-safe-area-context';

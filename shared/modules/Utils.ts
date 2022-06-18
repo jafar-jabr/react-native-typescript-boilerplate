@@ -1,4 +1,6 @@
 /* eslint-disable no-param-reassign */
+import React from "react";
+
 import { addMinutes, atThisMoment, dateOf, doFormat, timeStampOf } from 'date-dealer';
 import { Alert, Dimensions, Linking, PermissionsAndroid, PixelRatio, Platform } from 'react-native';
 import Config from 'react-native-config';

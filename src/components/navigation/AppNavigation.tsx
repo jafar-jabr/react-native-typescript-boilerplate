@@ -1,3 +1,4 @@
+import React from "react";
 import { createDrawerNavigator } from '@react-navigation/drawer';
 import { createStackNavigator } from '@react-navigation/stack';
 import { Dimensions } from 'react-native';
@@ -15,8 +16,8 @@ const AuthNavigation = () => {
   return (
     <AuthStack.Navigator
       initialRouteName="Login"
-      headerMode="none"
-      mode="modal"
+      //headerMode="none"
+     // mode="modal"
       screenOptions={{
         cardStyle: { backgroundColor: 'transparent' },
         cardOverlayEnabled: true,
@@ -46,10 +47,10 @@ const AppDrawerNavigator = () => {
   return (
     <Drawer.Navigator
       initialRouteName="MainScreen"
-      overlayColor="rgba(0,0,0, 0.5)"
-      drawerStyle={{
-        width: Math.min(height, width) * 0.65,
-      }}
+     // overlayColor="rgba(0,0,0, 0.5)"
+      //drawerStyle={{
+     //   width: Math.min(height, width) * 0.65,
+     // }}
       // @ts-ignore
       drawerContent={(props) => <CustomDrawerNavigator {...props} />}
     >
@@ -63,8 +64,8 @@ const MainAppNavigation = ({ isLoggedIn }) => {
   const Stack = createStackNavigator();
   return (
     <Stack.Navigator
-      headerMode="none"
-      mode="modal"
+     // headerMode="none"
+     // mode="modal"
       screenOptions={{
         cardStyle: { backgroundColor: 'transparent' },
         cardOverlayEnabled: true,

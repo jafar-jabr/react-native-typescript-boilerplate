@@ -1,3 +1,4 @@
+import React from "react";
 import { Dimensions, PixelRatio, Platform } from 'react-native';
 
 const responsiveFont = (size: number) => {

@@ -1,3 +1,4 @@
+import React from "react";
 import { Text } from 'react-native';
 import I18n from 'shared/I18n/I18n';
 import Header from 'src/components/sections/header';

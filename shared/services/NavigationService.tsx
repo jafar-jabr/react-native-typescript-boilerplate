@@ -1,14 +1,14 @@
+import React from "react";
 import {
   StackActions,
   DrawerActions,
   CommonActions,
   NavigationContainerRef,
 } from '@react-navigation/native';
-import * as React from 'react';
 
 export const isMountedRef = React.createRef<boolean>();
 
-export const navigationRef = React.createRef<NavigationContainerRef>();
+export const navigationRef = React.createRef<NavigationContainerRef<any>>();
 
 export const openDrawer = (): void => navigationRef.current?.dispatch(DrawerActions.openDrawer());
 

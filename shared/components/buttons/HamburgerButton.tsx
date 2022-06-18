@@ -1,3 +1,4 @@
+import React from "react";
 import * as NavigationService from '../../services/NavigationService';
 import { HamburgerMenu } from '../../styled/global.ltr.styles';
 

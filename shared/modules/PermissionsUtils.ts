@@ -1,3 +1,4 @@
+import React from "react";
 import { PermissionsAndroid, Platform } from 'react-native';
 import { PERMISSIONS, RESULTS, request } from 'react-native-permissions';
 

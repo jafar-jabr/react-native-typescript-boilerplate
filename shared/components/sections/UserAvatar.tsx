@@ -1,3 +1,4 @@
+import React from "react";
 import * as PropTypes from 'prop-types';
 import { AvatarText, AvatarWrapper, AvatarImage } from '../../styled/avatar.ltr.styles';
 

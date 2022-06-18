@@ -1,3 +1,4 @@
+import React from "react";
 import { View, Platform } from 'react-native';
 import { useState } from 'react';
 /* eslint-disable no-param-reassign */

@@ -1,3 +1,4 @@
+import React from "react";
 import { Keyboard, TouchableWithoutFeedback, KeyboardAvoidingView } from 'react-native';
 import Config from 'react-native-config';
 import { useState } from 'react';

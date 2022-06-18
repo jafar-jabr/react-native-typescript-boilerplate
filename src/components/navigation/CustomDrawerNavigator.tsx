@@ -4,6 +4,7 @@ import { useDispatch } from 'react-redux';
 import I18n from 'shared/I18n/I18n';
 import { requestLogout } from 'src/redux/actions/LoginActions';
 import { Row, SafeView } from 'shared/styled/global.ltr.styles';
+import React from "react";
 import UserAvatar from 'shared/components/sections/UserAvatar';
 import customDrawerRoutes from 'src/components/navigation/CustomDrawerRoutes';
 import {

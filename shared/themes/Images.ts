@@ -1,3 +1,4 @@
+import React from "react";
 /* eslint-disable global-require */
 const images = {
   logo: require('../assets/images/logo.png'),

@@ -1,3 +1,4 @@
+import React from "react";
 import { TextInput, TouchableOpacity, View } from 'react-native';
 import styled from 'styled-components';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
