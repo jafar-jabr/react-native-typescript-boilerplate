@@ -54,7 +54,19 @@
       }],
     "react/jsx-filename-extension": [1, { "extensions": [".ts", ".tsx"] }],
     "@typescript-eslint/ban-ts-comment": "off",
-    "@typescript-eslint/explicit-module-boundary-types": "off"
+    "@typescript-eslint/explicit-module-boundary-types": "off",
+    "prettier/prettier": [
+      "error",
+      {
+        "bracketSpacing": true,
+        "trailingComma": "none",
+        "singleQuote": true,
+        "printWidth": 100,
+        "useTabs": true,
+        "tabWidth": 2,
+        "arrowParens": "always"
+      }
+    ]
   },
   "settings": {
     "import/resolver": {
