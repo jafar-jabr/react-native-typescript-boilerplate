@@ -10,39 +10,37 @@ const sagaMiddleware = createSagaMiddleware();
 
 const persistRootKey = `root_awesome_app`;
 
-const appReducer = combineReducers(
-  {
-    authState: AuthReducer,
-  },
-);
+const appReducer = combineReducers({
+	authState: AuthReducer
+});
 
 const rootReducer = (state, action) => {
-    if (action.type === LOGOUT_SUCCESS) {
-        AsyncStorage.removeItem(`persist:${persistRootKey}`);
-        return appReducer(undefined, action);
-    }
-    return appReducer(state, action);
+	if (action.type === LOGOUT_SUCCESS) {
+		AsyncStorage.removeItem(`persist:${persistRootKey}`);
+		return appReducer(undefined, action);
+	}
+	return appReducer(state, action);
 };
 
 const persistConfig = {
-    key: persistRootKey,
-    storage: AsyncStorage,
-    blacklist: ['loadingState', 'errorState'],
-    timeout: 0,
-    version: 1,
+	key: persistRootKey,
+	storage: AsyncStorage,
+	blacklist: ['loadingState', 'errorState'],
+	timeout: 0,
+	version: 1
 };
 
 const persistedReducer = persistReducer(persistConfig, rootReducer);
 
 const store: Store = configureStore({
-    reducer: persistedReducer,
-    devTools: __DEV__,
-    middleware: (getDefaultMiddleware) => [
-        ...getDefaultMiddleware({
-            thunk: false,
-        }),
-        sagaMiddleware,
-    ],
+	reducer: persistedReducer,
+	devTools: __DEV__,
+	middleware: (getDefaultMiddleware) => [
+		...getDefaultMiddleware({
+			thunk: false
+		}),
+		sagaMiddleware
+	]
 });
 
 // sagaMiddleware.run(appSaga);

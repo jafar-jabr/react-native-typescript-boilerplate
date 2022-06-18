@@ -28,11 +28,13 @@ const customDrawerRoutes = () => {
 	};
 	return [
 		{
-			title: 'first',
+			title: '',
+			key: 'first',
 			data: [homeRoute, aboutUsRoute]
 		},
 		{
-			title: 'second',
+			title: '',
+			key: 'second',
 			data: [loginRoute, aboutUsRoute]
 		}
 	];

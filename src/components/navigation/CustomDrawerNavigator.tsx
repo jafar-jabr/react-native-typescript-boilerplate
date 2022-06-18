@@ -62,7 +62,7 @@ const CustomDrawerNavigator = () => {
 			</HeaderView>
 			<ScrollView>
 				{customDrawerRoutes().map((section) => (
-					<View key={section.title}>
+					<View key={section.key}>
 						<OrdersSection>
 							<HeaderSection>{section.title}</HeaderSection>
 							{section.data.map((item) => (
