@@ -1,7 +1,7 @@
 import { Keyboard, TouchableWithoutFeedback, KeyboardAvoidingView } from 'react-native';
 import Config from 'react-native-config';
 import { useState } from 'react';
-import HamburgerButton from 'shared/components/buttons/HamburgerButton';
+import MenuButton from 'shared/components/buttons/MenuButton';
 import Header from 'src/components/sections/header';
 import { SafeView, FlexedView, Space } from 'shared/styled/global.ltr.styles';
 import { LoginButton, LogoText } from 'shared/styled/login.ltr.styles';
@@ -16,7 +16,7 @@ function LoginScreen(): JSX.Element {
 
 	return (
 		<SafeView>
-			<Header leftComponent={<HamburgerButton />} />
+			<Header leftComponent={<MenuButton />} />
 			<KeyboardAvoidingView style={{ flex: 1 }} behavior="padding">
 				<TouchableWithoutFeedback onPress={Keyboard.dismiss}>
 					<FlexedView flex={1}>

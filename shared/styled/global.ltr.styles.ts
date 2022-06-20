@@ -416,7 +416,7 @@ export const CustomScrollNoPadding = styled(ScrollView).attrs({
 	width: 100%;
 `;
 
-export const HamburgerMenu = styled(Icon).attrs({})`
+export const AppMenu = styled(Icon).attrs({})`
 	color: ${(props) => props.theme.colors.black};
 	margin-vertical: 10px;
 	margin-left: 10px;

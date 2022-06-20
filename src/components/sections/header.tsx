@@ -8,9 +8,12 @@ function Header(props): JSX.Element {
 			{...props}
 			containerStyle={{
 				backgroundColor: Colors.white,
+				flexDirection: 'row',
+				alignItems: 'center',
 				justifyContent: 'space-around',
+
 				...Platform.select({ android: { paddingTop: 0 }, ios: {} }),
-				...Platform.select({ android: { height: 50 }, ios: {} })
+				...Platform.select({ android: { height: 0 }, ios: {} })
 			}}
 			statusBarProps={{ height: 50 }}
 		/>

@@ -1,30 +1,31 @@
 import I18n from 'shared/I18n/I18n';
 import * as NavigationService from 'shared/services/NavigationService';
+import { SCREENS } from 'shared/constants';
 
 const customDrawerRoutes = () => {
 	const defaultAction = (path) => {
-		NavigationService.navigate('Home', {
+		NavigationService.navigate(SCREENS.MAIN, {
 			screen: path
 		});
 		NavigationService.closeDrawer();
 	};
 	const homeRoute = {
 		title: I18n.t('mainScreen'),
-		path: 'MainScreen',
+		path: SCREENS.HOME,
 		icon: 'home',
-		onclick: () => defaultAction('MainScreen')
+		onclick: () => defaultAction(SCREENS.HOME)
 	};
 	const aboutUsRoute = {
 		title: I18n.t('aboutUs'),
-		path: 'AboutUs',
+		path: SCREENS.ABOU_US,
 		icon: 'info',
-		onclick: () => defaultAction('AboutUs')
+		onclick: () => defaultAction(SCREENS.ABOU_US)
 	};
 	const loginRoute = {
 		title: I18n.t('login'),
-		path: 'Login',
+		path: SCREENS.LOGIN,
 		icon: 'info',
-		onclick: () => defaultAction('Login')
+		onclick: () => defaultAction(SCREENS.LOGIN)
 	};
 	return [
 		{

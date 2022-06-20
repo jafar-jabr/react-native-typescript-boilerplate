@@ -2,8 +2,6 @@ import { Text } from 'react-native';
 import { debounce } from 'lodash';
 import Config from 'react-native-config';
 import I18n from 'shared/I18n/I18n';
-import Header from 'src/components/sections/header';
-import HamburgerButton from 'shared/components/buttons/HamburgerButton';
 import { Images } from 'shared/themes';
 import RegularButton from 'shared/components/buttons/RegularButton';
 import Alerts from 'shared/components/Alerts';
@@ -30,7 +28,6 @@ function MainScreen(): JSX.Element {
 	};
 	return (
 		<SafeView>
-			<Header leftComponent={<HamburgerButton />} />
 			<CustomScroll contentInsetAdjustmentBehavior="automatic">
 				<LogoImage source={Images.logo} />
 				<Text>{`${I18n.t('homeScreen.title')} to ${Config.APP_NAME}`}</Text>

@@ -6,8 +6,8 @@ I18n.defaultLocale = 'en';
 
 I18n.fallbacks = true;
 I18n.translations = {
-  ro,
-  en,
+	ro,
+	en
 };
 
 export default I18n;
